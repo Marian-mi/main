@@ -1,0 +1,117 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+$primary-color1: #ede6b9;
+$primary-color2: #316879;
+$border-radius-top: 0 0 100px 100px;
+$border-radius-bottom: 100px 100px 0 0;
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+}
+.Home-page {
+  height: 100%;
+}
+.home-top {
+  height: 55%;
+  width: 100%;
+  position: relative;
+  background-color: #ede6b962;
+  overflow: visible;
+  border-radius: $border-radius-top;
+  box-shadow: 0 0 40px 1px $primary-color1;
+
+}
+.home-page-image {
+  background-image: url(./assets/images/home-page-top.jpg);
+  width: 90%;
+  height: 70%;
+  position: relative;
+  top: 5%;
+  margin: auto;
+  opacity: 0.8;
+  border-radius: 10px;
+}
+.quran-font-image {
+  background-image: url(./assets/images/quran-font.png);
+  background-size: 100% 100%;
+  opacity: 0.7;
+  width: 60%;
+  margin: auto;
+  position: relative;
+  top: -20%;
+  height: 55%;
+  z-index: 10;
+  border-radius: 10px;
+}
+.home-middle {
+  border-radius: $border-radius-bottom;
+  height: 55%;
+  width: 100%;
+  position: relative;
+  background-color: rgba($color: $primary-color2, $alpha: 0.4);
+  z-index: -1;
+  top: -50px;
+ 
+  box-shadow: 0 0 40px 1px $primary-color2;
+  z-index: 1;
+  > div {
+    position: relative;
+    top: 15%;
+    width: 90%;
+    margin: auto;
+    height: 85%;
+    background-color: rgba($color: $primary-color1, $alpha: 0.3);
+    padding-top: 40px;
+    border-radius: $border-radius-bottom;
+    h1 {
+      text-align: center;  
+      padding: 5px;
+      letter-spacing: 2px;
+      width: 80%;
+      font-size: 20px;
+      color: rgba($color: $primary-color2, $alpha: 0.8);     
+      margin: auto;
+      border: 1px solid $primary-color1;
+      border-radius: 50px;
+    }
+  }
+}
+
+.buttonsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  height: 70%;
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  margin-top: 5%;
+  overflow: hidden;
+  .textBox {
+    text-align: center;
+    width: 135px !important;
+    color: $primary-color2;
+    font-size: 18px;
+    font-weight: 700;
+  }
+  svg {
+    font-size: 30px;
+    position: relative;
+    color: $primary-color2;
+  }
+  .iconContainer {
+    position: relative;
+    width: 135px;
+    margin: 2% 0;
+  }
+  >div {
+    width: 50%;
+    a {
+      width: 25%;
+      display: block;
+    }
+  }
+}
