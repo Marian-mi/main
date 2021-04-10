@@ -1,4 +1,4 @@
-import React, { ComponentProps, PropsWithChildren } from 'react';
+import React from 'react';
 
 
 
@@ -21,15 +21,11 @@ class buttonInflex extends React.Component<fprop> {
 
     render () {
         return ( 
-            <div>
-                <a>
-                    <div className="iconContainer">
-                        {this.props.icon}
-                  </div>
-                    <div className="textBox">
-                        {this.props.textData}
-                    </div>
-                </a>
+            <div className="felxItem">
+                {this.props.icon}
+                <p>
+                    {this.props.textData}
+                </p>
             </div>
         )
     }

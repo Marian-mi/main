@@ -7,6 +7,19 @@ $primary-color1: #ede6b9;
 $primary-color2: #316879;
 $border-radius-top: 0 0 100px 100px;
 $border-radius-bottom: 100px 100px 0 0;
+@mixin centeredboth {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+@mixin centeredleft {
+  left: 50%;
+  transform: translateX(-50%);
+}
+@mixin centeredtop {
+  top: 50%;
+  transform: translateY(-50%);
+}
 
 html, body, #root {
   height: 100%;
@@ -16,102 +29,159 @@ html, body, #root {
   height: 100%;
 }
 .home-top {
-  height: 55%;
+  
+  height: 35%;
   width: 100%;
   position: relative;
-  background-color: #ede6b962;
+  background-color: white;
   overflow: visible;
-  border-radius: $border-radius-top;
-  box-shadow: 0 0 40px 1px $primary-color1;
-
+  
 }
 .home-page-image {
-  background-image: url(./assets/images/home-page-top.jpg);
-  width: 90%;
-  height: 70%;
-  position: relative;
-  top: 5%;
-  margin: auto;
-  opacity: 0.8;
-  border-radius: 10px;
-}
-.quran-font-image {
-  background-image: url(./assets/images/quran-font.png);
-  background-size: 100% 100%;
-  opacity: 0.7;
-  width: 60%;
-  margin: auto;
-  position: relative;
-  top: -20%;
-  height: 55%;
-  z-index: 10;
-  border-radius: 10px;
-}
-.home-middle {
-  border-radius: $border-radius-bottom;
-  height: 55%;
   width: 100%;
+  height: 25%;
+  padding: 5px 10px;
   position: relative;
-  background-color: rgba($color: $primary-color2, $alpha: 0.4);
-  z-index: -1;
-  top: -50px;
- 
-  box-shadow: 0 0 40px 1px $primary-color2;
-  z-index: 1;
-  > div {
-    position: relative;
-    top: 15%;
-    width: 90%;
-    margin: auto;
-    height: 85%;
-    background-color: rgba($color: $primary-color1, $alpha: 0.3);
-    padding-top: 40px;
-    border-radius: $border-radius-bottom;
-    h1 {
-      text-align: center;  
-      padding: 5px;
-      letter-spacing: 2px;
-      width: 80%;
-      font-size: 20px;
-      color: rgba($color: $primary-color2, $alpha: 0.8);     
-      margin: auto;
-      border: 1px solid $primary-color1;
-      border-radius: 50px;
-    }
+  img {
+    height: 40px;
+    width: 250px;
+    position: absolute;
+    right: 0;
+    @include centeredtop()
+  }
+  svg {
+    font-size: 35px;
+    position: absolute;
+    color: rgb(104, 104, 104);
+    @include centeredtop()
   }
 }
-
-.buttonsContainer {
-  display: flex;
-  flex-wrap: wrap;
-  height: 70%;
-  width: 80%;
-  margin: auto;
-  text-align: center;
-  margin-top: 5%;
-  overflow: hidden;
-  .textBox {
-    text-align: center;
-    width: 135px !important;
-    color: $primary-color2;
+.quran-font-image {
+  background-image: url(./assets/images/fog.jfif);
+  background-size: 100% 100%;
+  opacity: 0.8;
+  width: 100%;
+  position: relative;
+  height: 100%;
+  z-index: 10;
+}
+.bannerContainer {
+  position: relative;
+  height: 75%;
+}
+.homeCover {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(128, 128, 128, 0.671);
+  z-index: 200;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  h1, p {
+    position: relative;
+    top: 20%;
+    padding: 0 20px;
+    color: rgb(54, 54, 54);
+  }
+  p {
+    margin-top: 20px;
     font-size: 18px;
     font-weight: 700;
   }
+}
+.home-middle {
+  height: 55%;
+  background-color: rgba(128, 128, 128, 0.671);
+  // background-color: rgba(202, 202, 202, 0.486);
+  // background-color: white;
+  position: relative;
+  z-index: -2;
+  display: flex;
+  flex-wrap: nowrap;
+  .HM-left {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    height: 40%;
+    background-color: white;
+    top: 25%;
+    border-radius: 4px;
+    display: flex;
+    flex-wrap: nowrap;
+    border: 1px ridge $primary-color2;
+  }
+}
+
+.felxItem {
+  width: 100%;
+  height: 20%;
+  position: relative;
+  top: 30%;
   svg {
-    font-size: 30px;
-    position: relative;
+    font-size: 40px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     color: $primary-color2;
   }
-  .iconContainer {
+  p {
     position: relative;
-    width: 135px;
-    margin: 2% 0;
+    top: 150%;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    color: $primary-color2;
   }
-  >div {
-    width: 50%;
-    a {
-      width: 25%;
-      display: block;
-    }
+}
+
+.scrollSuggestion {
+  position: absolute;
+  bottom: 15%;
+  width: 100%;
+  height: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba($color: $primary-color2, $alpha: 0.4);
+  z-index: -1;
+}
+.searchContainer {
+  position: relative;
+  height: 25%;
+  width: 100%;
+  padding: 0 10px;
+  
+}
+.searchField {
+  width: 80%;
+  height: 50px;
+  position: relative;
+  background-color: rgba(129, 180, 99, 0.089);
+  border: 2px solid rgba(211, 211, 211, 0.774);
+  display: flex;
+  flex-wrap: nowrap;
+  border-radius: 10px;
+  @include centeredtop();
+  input {
+    background: none;
+    width: 75%;
+    height: 70%;
+    border: none;
+    border-bottom: 2px solid rgba(211, 211, 211, 0.774);
+    position: absolute;
+    left: 5%;
+    top: 15%;
+  }
+  
+}
+.searchlogo {
+  width: 20%;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  svg {
+    position: absolute;
+    color: rgb(94, 94, 94);
+    font-size: 22px;
+    @include centeredboth();
   }
 }
