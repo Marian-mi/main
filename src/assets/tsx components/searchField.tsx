@@ -1,13 +1,13 @@
-import React, { ChangeEvent } from 'react';
+import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 type props = {
-    onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
+    onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 export default class searchField extends React.Component<props> {
-
+// eslint-disable-next-line
     constructor(props: props) {
         super(props)
     }
@@ -17,19 +17,18 @@ export default class searchField extends React.Component<props> {
             <div className="searchContainer">
                 <div className="searchField">
                     <label htmlFor="search"></label>
-                    <input
+                    <input 
+                    name="search" 
                     type="text"
-                    placeholder="Example: الفاتحه..."
-                    name="search"
                     onChange={this.props.onChange}
+                    autoComplete="off" 
                     />
                     <div className="searchlogo">
                         <FontAwesomeIcon 
                         icon={faSearch}
                         />
                     </div>
-                </div>
-                        
+                </div>                  
             </div>
         )
     }

@@ -13,12 +13,10 @@ type fprop = {
 }
 
 class buttonInflex extends React.Component<fprop> {
+    //eslint-disable-next-line
     constructor(props: fprop) {
         super(props);
     }
-
-   
-
     render () {
         return ( 
             <div className="felxItem">

@@ -29,13 +29,10 @@ html, body, #root {
   height: 100%;
 }
 .home-top {
-  
   height: 35%;
   width: 100%;
   position: relative;
   background-color: white;
-  overflow: visible;
-  
 }
 .home-page-image {
   width: 100%;
@@ -57,7 +54,7 @@ html, body, #root {
   }
 }
 .quran-font-image {
-  background-image: url(./assets/images/fog.jfif);
+  background-image: url(../images/fog.jfif);
   background-size: 100% 100%;
   opacity: 0.8;
   width: 100%;
@@ -91,10 +88,7 @@ html, body, #root {
 .home-middle {
   height: 55%;
   background-color: rgba(128, 128, 128, 0.671);
-  // background-color: rgba(202, 202, 202, 0.486);
-  // background-color: white;
   position: relative;
-  z-index: -2;
   display: flex;
   flex-wrap: nowrap;
   .HM-left {
@@ -113,21 +107,20 @@ html, body, #root {
 
 .felxItem {
   width: 100%;
-  height: 20%;
+  height: 100%;
   position: relative;
-  top: 30%;
+  transition: 0.5s;
   svg {
     font-size: 40px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
     color: $primary-color2;
+    position: relative;
+    @include centeredleft();
+    top: 20%;
   }
   p {
-    position: relative;
-    top: 150%;
     text-align: center;
+    position: relative;
+    top: 30%;
     font-size: 18px;
     font-weight: 600;
     color: $primary-color2;
@@ -139,17 +132,13 @@ html, body, #root {
   bottom: 15%;
   width: 100%;
   height: 100px;
-  left: 50%;
-  transform: translateX(-50%);
   background-color: rgba($color: $primary-color2, $alpha: 0.4);
-  z-index: -1;
 }
 .searchContainer {
   position: relative;
   height: 25%;
   width: 100%;
   padding: 0 10px;
-  
 }
 .searchField {
   width: 80%;
@@ -171,7 +160,12 @@ html, body, #root {
     left: 5%;
     top: 15%;
   }
-  
+  input:focus {
+    border: none;
+  }
+}
+.felxItem:hover {
+  background-color: rgba(128, 128, 128, 0.671);
 }
 .searchlogo {
   width: 20%;

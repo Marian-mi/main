@@ -1,27 +1,19 @@
-import React, { ChangeEvent } from 'react';
-import '../App.scss';
+import React from 'react';
+import '../assets/scss/home-page.scss';
 import logo from '../assets/images/bismillah.png';
 import Buttons from '../assets/tsx components/buttons-inflex';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAddressBook, faFile, faList, faSearch } from '@fortawesome/free-solid-svg-icons';
+import { faAddressBook, faFile, faList } from '@fortawesome/free-solid-svg-icons';
 import SearchField from '../assets/tsx components/searchField'
 
+
 class Homepage extends React.Component {
-
-    componentDidMount () {
-        const idio = document.querySelector('#auniqueid')! as HTMLDivElement;
-        idio?.addEventListener('click', () => {
-            alert('heldawoo')
-        })
-    }
-
     render() {
         const buttonData = [
             {textData: "Soore List", icon:<FontAwesomeIcon icon={faList} />, id: 2},
             {textData: "Setting", icon:<FontAwesomeIcon icon={faAddressBook} />, id: 3},
             {textData: "About Us", icon:<FontAwesomeIcon icon={faFile} />, id: 4}
         ]
-
         const ButtonDiv = buttonData.map(item => {
             return <Buttons 
             textData={item.textData} 
@@ -29,9 +21,6 @@ class Homepage extends React.Component {
             key={item.id}
             />
         })
-
-
-
         return (
             <div className="Home-page">
                 <div className="home-top">
@@ -40,15 +29,14 @@ class Homepage extends React.Component {
                             <img src={logo} alt=""/>
                         </div>
                         <FontAwesomeIcon icon={faList} />
-                       
+                      
                     </div>
                     <div className="bannerContainer">
                         <div className="homeCover">
-                            <h1  id="auniqueid">The Noble Quran</h1>
+                            <h1>The Noble Quran</h1>
                             <p>
                             Lorem ipsum dolor sit amet, 
-                            consectetuer adipiscing elit. Aenean commodo
-                             
+                            consectetuer adipiscing elit. Aenean commodo                           
                             </p>
                         </div>
                         <div  className="quran-font-image"></div>
@@ -56,9 +44,12 @@ class Homepage extends React.Component {
                 </div>
                 <div className="home-middle">
                     <SearchField />
-                    <div className="HM-left" >
+                    <div className="HM-left">
                     {ButtonDiv}
-                    </div> <div className="scrollSuggestion"></div>             
+                    </div> 
+                    <div className="scrollSuggestion">
+                        <p>Scrool down for more!</p>                
+                    </div>                               
                 </div>
             </div>
         )
