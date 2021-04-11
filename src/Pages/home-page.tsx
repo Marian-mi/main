@@ -48,8 +48,11 @@ class Homepage extends React.Component {
                     {ButtonDiv}
                     </div> 
                     <div className="scrollSuggestion">
-                        <p>Scrool down for more!</p>                
-                    </div>                               
+                        <p>Scroll down for more!</p>                
+                    </div>
+                    {/* <div className="Soore-list-header">
+                        با کلیک کردن بر روی هر سوره به صفحه آیات مربوط به آن سوره منتقل میشوید
+                    </div>                               */}
                 </div>
             </div>
         )

@@ -1,15 +1,9 @@
 import React from 'react';
 
-
-
-
-
 type fprop = {
-    
     id?: number;
     textData: string;
     icon: any;
-    
 }
 
 class buttonInflex extends React.Component<fprop> {

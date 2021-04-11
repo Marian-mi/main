@@ -3,23 +3,7 @@
   margin: 0;
   padding: 0;
 }
-$primary-color1: #ede6b9;
-$primary-color2: #316879;
-$border-radius-top: 0 0 100px 100px;
-$border-radius-bottom: 100px 100px 0 0;
-@mixin centeredboth {
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-@mixin centeredleft {
-  left: 50%;
-  transform: translateX(-50%);
-}
-@mixin centeredtop {
-  top: 50%;
-  transform: translateY(-50%);
-}
+@import "common";
 
 html, body, #root {
   height: 100%;
@@ -89,15 +73,11 @@ html, body, #root {
   height: 55%;
   background-color: rgba(128, 128, 128, 0.671);
   position: relative;
-  display: flex;
-  flex-wrap: nowrap;
   .HM-left {
     width: 100%;
-    position: absolute;
-    left: 0;
+    position: relative;
     height: 40%;
     background-color: white;
-    top: 25%;
     border-radius: 4px;
     display: flex;
     flex-wrap: nowrap;
@@ -128,11 +108,18 @@ html, body, #root {
 }
 
 .scrollSuggestion {
-  position: absolute;
-  bottom: 15%;
   width: 100%;
+  z-index: -1;
   height: 100px;
   background-color: rgba($color: $primary-color2, $alpha: 0.4);
+  text-align: center;
+  p {
+    position: relative;
+    @include centeredtop();
+    color: rgba(255, 255, 255, 0.685);
+    font-size: 24px;
+    font-weight: 700;
+  }
 }
 .searchContainer {
   position: relative;
@@ -141,8 +128,9 @@ html, body, #root {
   padding: 0 10px;
 }
 .searchField {
-  width: 80%;
+  width: 95%;
   height: 50px;
+  margin: auto;
   position: relative;
   background-color: rgba(129, 180, 99, 0.089);
   border: 2px solid rgba(211, 211, 211, 0.774);
@@ -154,10 +142,15 @@ html, body, #root {
     background: none;
     width: 75%;
     height: 70%;
+    font-size: 18px;
+    font-family: $font-farsi;
     border: none;
     border-bottom: 2px solid rgba(211, 211, 211, 0.774);
     position: absolute;
+    padding: 0 15px;
     left: 5%;
+    font-weight: 500;
+    direction: rtl;
     top: 15%;
   }
   input:focus {
@@ -178,4 +171,11 @@ html, body, #root {
     font-size: 22px;
     @include centeredboth();
   }
+}
+
+.Soore-list-header {
+  position: absolute;
+  
+  right: 25px;
+  direction: rtl;
 }

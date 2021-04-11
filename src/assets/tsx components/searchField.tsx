@@ -20,6 +20,7 @@ export default class searchField extends React.Component<props> {
                     <input 
                     name="search" 
                     type="text"
+                    placeholder="مثال: الفاتحه"
                     onChange={this.props.onChange}
                     autoComplete="off" 
                     />
