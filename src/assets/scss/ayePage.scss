@@ -1,0 +1,18 @@
+@import 'common';
+
+.aye-main {
+    div {
+        direction: rtl;
+        width: 350px;
+        background-image: linear-gradient(45deg, #729e8dc7, rgba($color: $primary-color2, $alpha: 0.4));
+        box-shadow: 0 0 5px 0 $primary-color2;
+        height: inherit; 
+        position: relative;
+        padding: 30px 30px;
+        border: 1px ridge rgba(0, 158, 137, 0.87);;
+        margin: 15px auto;
+        font-size: 30px;
+        color: rgba(34, 34, 34, 0.733);
+        font-family: $font-farsi;
+    }
+}
