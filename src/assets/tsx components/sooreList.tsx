@@ -9,10 +9,6 @@ type props = {
 }
 
 export default class SooreList extends React.Component<props> {
-    //eslint-disable-next-line
-    constructor(props: props) {
-        super(props);
-    }
 
     render () {
         return (

@@ -7,17 +7,13 @@ type props = {
 }
 
 export default class searchField extends React.Component<props> {
-// eslint-disable-next-line
-    constructor(props: props) {
-        super(props)
-    }
-
     render () {
         return ( 
             <div className="searchContainer">
-                <div className="searchField">
-                    <label htmlFor="search"></label>
-                    <input 
+                <div className="searchField" >
+                    <label htmlFor="search" ></label>
+                    <input
+                    
                     name="search" 
                     type="text"
                     placeholder="مثال: الفاتحه"
