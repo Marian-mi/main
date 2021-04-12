@@ -1,6 +1,6 @@
 import React from 'react';
-import '../assets/scss/soore-list.scss';
-import SooreList from '../assets/tsx components/sooreList';
+import '../scss/soore-list.scss';
+import SooreList from '../tsx components/sooreList';
 import Sura from '../assets/ts/quran-metadata'
 import { Link } from 'react-router-dom';
 
@@ -20,7 +20,9 @@ export default class SooreListPage extends React.Component {
                     pathname: `Aye/${item[5]}`,
                     state: {
                         start: item[0],
-                        end: array[index+1][0]
+                        end: array[index+1][0],
+                        sooreNumber: index,
+                        ayeName: item[4],                
                     }
                 }}>
                 <SooreList

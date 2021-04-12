@@ -1,21 +1,22 @@
 import React from 'react';
-import '../assets/scss/home-page.scss';
+import '../scss/home-page.scss';
 import logo from '../assets/images/bismillah.png';
-import Buttons from '../assets/tsx components/buttons-inflex';
+import Buttons from '../tsx components/buttons-inflex';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAddressBook, faFile, faList } from '@fortawesome/free-solid-svg-icons';
-import SearchField from '../assets/tsx components/searchField'
+import SearchField from '../tsx components/searchField'
 
 
 class Homepage extends React.Component {
     render() {
         const buttonData = [
-            {textData: "Soore List", icon:<FontAwesomeIcon icon={faList} />, id: 2},
-            {textData: "Setting", icon:<FontAwesomeIcon icon={faAddressBook} />, id: 3},
-            {textData: "About Us", icon:<FontAwesomeIcon icon={faFile} />, id: 4}
+            {textData: "Soore List", icon:<FontAwesomeIcon icon={faList} />, id: 2, class: "felxItem"},
+            {textData: "Setting", icon:<FontAwesomeIcon icon={faAddressBook} />, id: 3, class: "felxItem"},
+            {textData: "About Us", icon:<FontAwesomeIcon icon={faFile} />, id: 4, class: "felxItem"}
         ]
         const ButtonDiv = buttonData.map(item => {
-            return <Buttons 
+            return <Buttons
+            class={item.class} 
             textData={item.textData} 
             icon={item.icon}
             key={item.id}
@@ -50,9 +51,7 @@ class Homepage extends React.Component {
                     <div className="scrollSuggestion">
                         <p>Scroll down for more!</p>                
                     </div>
-                    {/* <div className="Soore-list-header">
-                        با کلیک کردن بر روی هر سوره به صفحه آیات مربوط به آن سوره منتقل میشوید
-                    </div>                               */}
+                    
                 </div>
             </div>
         )
