@@ -23,7 +23,8 @@
         font-family: $font-farsi;
         display: flex;
         flex-wrap: wrap;
-        justify-content: center;         
+        justify-content: center;
+        transition: 0.5s;         
     }
 }
 .copied {

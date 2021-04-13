@@ -5,6 +5,7 @@ import Buttons from  '../tsx components/buttons-inflex';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCopy, faPlayCircle, faShare } from '@fortawesome/free-solid-svg-icons';
 import logo from '../assets/images/bismillah.png';
+import tarjomeAnsarian from  '../assets/ts/tarjomeh/fa.ansarian';
 
 declare module 'react' {
     interface HTMLAttributes<T> extends AriaAttributes, DOMAttributes<T> {
@@ -53,9 +54,22 @@ export default class ayatePage extends React.Component<props> {
                 console.log(soore);
                 audio.setAttribute('src', `https://audio.qurancdn.com/Alafasy/mp3/${soore}${aye}.mp3`);
                 audio.play();
+                const parentDiv = target.parentElement;
+                const mainDiv = parentDiv!.parentElement!;
+                audio.onabort = audioAboutHandler(mainDiv);
+                mainDiv!.style.color = 'rgba(0, 94, 94, 0.747)';
+                audio.onended = () => {mainDiv!.style.color = 'rgba(34, 34, 34, 0.733)'};
             })
         })
 
+        const audioAboutHandler = (parent: HTMLElement): any => {
+            const textContainers = document.querySelectorAll<HTMLDivElement>('.aye-text');
+            textContainers.forEach((item) => {
+                if (item !== parent) {
+                    item.style.color ='rgba(34, 34, 34, 0.733)';
+                }
+            })
+        }
 
         const copyButtons = document.querySelectorAll('.copyButton')!;
         copyButtons.forEach(item => {
@@ -116,6 +130,7 @@ export default class ayatePage extends React.Component<props> {
                 className="aye-text"              
                 key={index}>  
                 <p className="ayeText">{item}</p>
+                <p className="ayeText ayeTarjome">{tarjomeAnsarian[start + index - 1]}</p>
                 {ButtonDiv}
             </div>
         })
